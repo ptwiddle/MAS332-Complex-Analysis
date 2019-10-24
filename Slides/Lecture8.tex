@@ -1,0 +1,139 @@
+ \documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{amsmath, amssymb, hyperref, graphics, tikz}
+%\usepackage{mathpazo, soul}
+
+
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+
+
+\begin{document}
+
+\begin{frame}{On Switching Orders}
+``There are three big assumptions, all valid in this course with our situation, but which are false in general.''
+\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{UniformKermit.jpg}
+\end{frame}
+
+\begin{frame}{Sequences in $\C$ -- just as in $\R$}
+\begin{definition}
+Let $a_n$ be a sequence of complex numbers.  Then we say the sequence converges to $L$, and write $$\lim_{n\to\infty} a_n=L$$ if for all $\varepsilon>0$ there exists an $N$ so for $n>N$ we have $|a_n-L|<\varepsilon$
+\end{definition}    
+\begin{lemma} 
+$$\lim_{n\to\infty} a_n=L \iff \begin{array}{c}\lim_{n\to\infty} \Real(a_n)=\Real(L) \\ \lim_{n\to\infty} \Imag(a_n)=\Imag(L)\end{array}$$
+\end{lemma}
+\begin{proof}
+$$\max\left(|\Real(z-L)|, |\Imag(z-L)|\right)\leq |z-L|\leq|\Imag(z-L)|+|\Real(z-L )|$$
+\end{proof}
+\end{frame}
+
+\begin{frame}{Series in $\C$ -- just as in $\R$}
+
+\begin{definition}
+Let $a_n$ be a sequence of complex numbers.  Then we say the series $\sum_{i=0}^\infty a_i$ converges to $L$ if the sequence of partial sums $S_n=\sum_{i=0}^n a_i$ converges to $L$.    
+\end{definition}    
+
+\begin{definition}
+    A series $\sum a_n$ is \emph{absolutely convergent} if $\sum |a_n|$ converges. 
+\end{definition}
+\begin{block}{Two tools:}
+\begin{itemize}
+\item Comparison test
+\item Geometric series
+\end{itemize}
+\end{block}
+
+
+    
+\end{frame}
+
+\begin{frame}{We'll mostly be interested in power series}
+\begin{definition} Suppose that $a_n, z_0\in \C$. A series of the form
+$$\sum_{n=0}^\infty a_n (z-z_0)^n$$
+is called a \emph{power series centred at $z_0$}.
+\end{definition}
+We will be interested in what values of $z$ a given power series converges; for those values, we will have a function of $z$.  E.g.
+$$\exp(z)=\sum_{n=0}^\infty \frac{z^n}{n!}\quad\quad\forall z\in\C$$
+\end{frame}
+
+\begin{frame}{Radius of convergence}
+\begin{theorem} Suppose $w\neq 0$ and $\sum a_n w^n$ converges.  Then $\sum a_n z^n$ is absolutely convergent for all $z$ with $|z|<|w|$
+\end{theorem}
+\begin{theorem}[Abel]
+For any power series, either:
+\begin{enumerate}
+\item The power series converges only at $z=0$.
+\item The power series is absolutely convergent for all $z\in\C$
+\item There is a real number $R$ so that the power series is absolutely convergent if $|z|<R$, and divergent if $|z|>R$
+\end{enumerate}
+\end{theorem}
+$R$ is called the radius of convergence. It is zero in case one, and infinite in case 2.
+
+\end{frame}
+
+\begin{frame}{The ratio test}
+The radius of convergence always exists (though it may be 0 or $\infty$), but not clear how to find.  We will mostly use:
+\begin{theorem}[Ratio Test] If
+$$\lim_{n\to\infty} \frac{|a_n|}{|a_{n+1}|}=R$$
+Then $R$ is the radius of convergence.
+\end{theorem}
+\begin{proof} 
+Idea: use comparison test to compare to geometric series
+\end{proof}
+\begin{itemize}
+    \item  \alert{Can't} apply Ratio Test to ``most'' power series. \\
+\item \emph{Can} apply Ratio Test to most power series we'll see!
+\end{itemize}
+
+\end{frame}
+\begin{frame}
+  
+\begin{center}
+
+\Huge
+
+\usebeamercolor[fg]{frametitle}
+Clicker Session \\
+Turning Point app or \\
+ttpoll.eu 
+
+\end{center}
+
+\end{frame}
+\begin{frame}{Examples}
+Find the radius of convergence of the following functions.
+\begin{eqnarray}
+\sum_{n=0}^\infty (\sinh(n))z^n \\
+\sum_{n=1}^\infty \frac{(2i)^nz^n}{n} \\
+\sum_{n=1}^\infty \frac{(2i)^nz^{3n}}{n} \\
+\sum_{n=0}^\infty \frac{(2n)!n!}{(3n)!} z^n
+\end{eqnarray}
+    
+    
+
+
+\end{frame}
+
+
+\begin{frame}{Convergent Power series give analytic functions}
+Define $f(z)=\sum a_nz^n$ inside the radius of convergence.  Is $f(z)$ analytic?  We'd like to argue:
+\begin{align*}f^\prime(z)&=\frac{d}{dz}\sum a_nz^n \\
+&=\sum \frac{d}{dz} a_nz^n \\
+&=\sum na_nz^{n-1}
+\end{align*}
+\begin{block}{We're being Evil Kermit}
+\begin{itemize}
+    \item Not clear we can move derivative inside sum
+    \item Not clear final power series converges
+\end{itemize}
+\end{block}
+\begin{block}{Hence: Power series give analytic functions!}
+Will see later this gives \emph{all} analytic functions!
+\end{block}
+\end{frame}
+\end{document}
