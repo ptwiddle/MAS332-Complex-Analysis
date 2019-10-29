@@ -1,0 +1,97 @@
+ \documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{amsmath, amssymb, hyperref, graphics, tikz}
+%\usepackage{mathpazo, soul}
+
+
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+
+
+\begin{document}
+
+\begin{frame}{https://www.gov.uk/register-to-vote}\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{ElectionIsComing.jpg}\begin{itemize}
+    \item Can register here and at home, vote in both local elections
+    \item Vote on National things once, can decide at last moment
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples}
+Find the radius of convergence of the following functions.
+\begin{eqnarray}
+\sum_{n=0}^\infty (\sinh(n))z^n \\
+\sum_{n=1}^\infty \frac{(2i)^nz^n}{n} \\
+\sum_{n=1}^\infty \frac{(2i)^nz^{3n}}{n} \\
+\sum_{n=0}^\infty \frac{(2n)!n!}{(3n)!} z^n
+\end{eqnarray}
+    
+    
+
+
+\end{frame}
+
+
+\begin{frame}{Convergent Power series give analytic functions}
+Define $f(z)=\sum a_nz^n$ inside the radius of convergence.  Is $f(z)$ analytic?  We'd like to argue:
+\begin{align*}f^\prime(z)&=\frac{d}{dz}\sum a_nz^n \\
+&=\sum \frac{d}{dz} a_nz^n \\
+&=\sum na_nz^{n-1}
+\end{align*}
+\begin{block}{We're being Evil Kermit}
+\begin{itemize}
+    \item Not clear we can move derivative inside sum
+    \item Not clear final power series converges
+\end{itemize}
+\end{block}
+\begin{block}{Power series give analytic functions inside disk of convergence!}
+Will see later this gives \emph{all} analytic functions!
+\end{block}
+\end{frame}
+
+\begin{frame}
+  
+\begin{center}
+
+\Huge
+
+\usebeamercolor[fg]{frametitle}
+Clicker Session \\
+Turning Point app or \\
+ttpoll.eu 
+
+\end{center}
+
+\end{frame}
+
+
+
+\begin{frame}{If $f$ has an antiderivative, integration is easy}
+\begin{definition} Let $f$ be defined on a region $D$.  A \emph{primitive} of $f$ is an analytic function $g$ on $D$ with $g^\prime=f$ at \alert{all points in $D$}. \end{definition}
+\begin{block}{Note:} $D$ does not need to be simply connected!
+\end{block}
+
+\begin{lemma}If $g$ is a primitive for $f$ on $D$, and $\gamma$ is any path from $p$ to $q$ in $D$, then $\int_\gamma f(z)dz=g(q)-g(p)$.
+\end{lemma}
+\begin{corollary}
+If $\gamma$ is a contour (i.e., $p=q$), and $f$ has a primitive on $D$, then $\int_\gamma f(z)dz=0$.
+\end{corollary}
+\end{frame}
+\begin{frame}{Examples of using primitives}
+\begin{enumerate}
+    \item Evaluate $\int_\gamma zdz$ where $\gamma$ is the line segment from 0 to 1 followed by the line segment from 1 to $1+i$
+    \item Evaluate $\int_\gamma z\exp(z^2)dz$ where $\gamma$ is the contour $z=e^{it}$
+\item Homework: Evaluating $\int_\gamma (1+z)dz$ is easy!
+\end{enumerate}
+\begin{block}{What does the lemma say about our important example:}
+$$\int_{C_r(a)}\frac{1}{(z-a)^n}\text{d}z=\begin{cases} 0 & n\neq 1 \\ 2\pi i & n=1\end{cases}$$
+\end{block}
+
+\end{frame}
+
+
+\end{document}
