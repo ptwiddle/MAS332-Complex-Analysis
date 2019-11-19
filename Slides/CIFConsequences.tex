@@ -1,0 +1,88 @@
+ \documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{amsmath, amssymb, hyperref, graphics, tikz}
+\usepackage[normalem]{ulem} %for strikeout \sout{ }
+
+\usepackage{tikzsymbols} %for smileys
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\begin{document}
+\begin{frame}{Previously: Cauchy's Integral Formula and Consequences}
+\begin{theorem}[Cauchy's integral formula] Let $\gamma$ be a simple contour described in the positive direction.  Let $w$ lie inside $\gamma$.  Suppose that $f$ is analytic on a simply connected region $D$ containing $\gamma$ and its interior.  Then:
+
+$$f(w)=\frac{1}{2\pi i} \int_\gamma\frac{f(z)}{z-w}dz.$$
+
+\end{theorem}
+\begin{block}{Uses of Cauchy's Integral Formula}
+\begin{itemize}
+    \item Calculate contour integrals
+    \item Values of $f$ inside a contour determined by values on boundary
+    \item \alert{Proving $f$ has convergent Taylor series!}
+\end{itemize}
+\end{block}
+\begin{block}{Today: Other applications}
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{Analytic functions have all derivatives!}
+\begin{theorem}[Cauchy's Integral formula for the derivatives]
+Let $\gamma$ be a simple contour described in the positive direction.  let $w$ be any point inside $\gamma$.  Suppose $f$ analytic on a simply-connected region $D$ containing $\gamma$.
+Then $$f^{(n)}(w)=\frac{n!}{2\pi i}\int_\gamma \frac{f(z)}{(z-w)^{n+1}}dz$$
+
+\end{theorem}
+
+\begin{proof}Take $\frac{d}{dw}$ of both sides of CIF.  Differentiate inside the integral.
+\end{proof}
+\begin{example} Let $\gamma$ be the square with vertices $1, i, -1,-i$.  Evaluate
+$$\int_\gamma\frac{e^z}{z^n}dz$$
+
+\end{example}
+\end{frame}
+
+\begin{frame}{Another application of CIF: Liouville's Theorem}
+\begin{theorem}[Liouville's Theorem]
+A function which is analytic and bounded in the complex plane is a constant.
+\end{theorem}
+\begin{proof}Let $a, b\in \C$.
+\begin{enumerate}
+    \item Rewrite $f(a)-f(b)$ as an integral around $|z|=R$ using CIF.  
+    \item Use ML to bound $|f(a)-f(b)|$
+    \item As $R\to\infty$, the bound goes to 0.
+\end{enumerate}    
+\end{proof}
+
+Toy applications of Liouville's Theorem frequently on exam, and in problem sheets.  More excitingly, Liouville's Theorem can prove the fundamental theorem of algebra.
+\end{frame}
+
+\begin{frame}{Hope you're excited as I am}
+\begin{center}
+    \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{FundamentalTheoremSuccess.jpg}
+\end{center}
+
+
+\end{frame}
+
+
+\begin{frame}{A theorem you've long used...}
+\begin{theorem}[Fundamental Theorem of algebra] Let $p(z)$ be a non-constant polynomial with complex coefficients.  Then there is a point $w\in\C$ such that $p(w)=0.$\end{theorem}
+
+\begin{proof}
+Suppose not, and $p(z)$ has no roots. Then show $1/p(z)$ is bounded and analytic on $\C$, and apply Liouville's Theorem.
+\end{proof}
+Using induction, it follows that a polynomial of degree $n$ has $n$ roots, counted with multiplicity.
+
+\begin{block}{Note}
+The trick of dividing by a nonzero function appears frequently in applications.
+\end{block}
+
+\end{frame}
+
+
+\end{document}
