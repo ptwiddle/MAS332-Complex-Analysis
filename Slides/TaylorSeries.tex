@@ -1,0 +1,89 @@
+ \documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{amsmath, amssymb, hyperref, graphics, tikz}
+\usepackage[normalem]{ulem} %for strikeout \sout{ }
+
+\usepackage{tikzsymbols} %for smileys
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\begin{document}
+
+
+\begin{frame}{He's \emph{not} a real smooth function}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+    \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{AlwaysTaylor.jpg}
+\end{column}
+\begin{column}{0.4\textwidth}
+The following function from $\R\to\R$ is infinitely differentiable everywhere, but the Taylor series at 0 converges nowhere:
+$$f(x)=\begin{cases} 0 & x\leq 0 \\
+e^{-1/x} & x>0 \end{cases}$$
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+
+\begin{frame}{Analytic Functions have Taylor Series}
+\begin{theorem} Let $f$ be analytic on $\Delta=\{z : |z-z_0|<r\}$, where $r>0$.  Then $f$ has a Taylor expansion about $z_0$ that is valid on all of $\Delta$: 
+$$f(z)=\sum_{n=0}^\infty \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n$$
+\end{theorem}
+\begin{proof}
+CIF +  Expand $1/(w-z)$ as geometric series in $(z-z_0)/(w-z_0)$\\
+\alert{Warning:} Usual role of $w$ and $z$ in CIF reversed for this proof.
+\end{proof}
+
+\begin{block}{Cool corollary}
+The radius of convergence around $z_0$ is the distance to the first point $w$ where $f$ isn't analytic.
+
+In particular, if $f$ is entire (analytic on all of $\C$), then its Taylor expansions converge everywhere!
+\end{block}
+\end{frame}
+
+\begin{frame}{Calculating Taylor series}
+\begin{block}{When possible, avoid taking derivatives}
+Too much work.
+\end{block}
+
+\begin{block}{Instead...}
+\begin{itemize}
+    \item Build from Taylor series you know: $1/(1-z), \exp, \sin,\dots$
+    \item Helps psychologically to substitute $w=z-z_0$
+    \item Can differentiate / integrate Taylor series term by term
+\end{itemize}
+\end{block}
+\begin{block}{Examples: find Taylor series of...}
+\begin{enumerate}
+    \item $1/(z+1)$ around $z=2$
+    \item $z^3\cosh(z^2)$ around $z=0$
+    \item $1/(1-z)^2$ around $z=0$ 
+    \end{enumerate}
+
+\end{block}
+
+
+\end{frame}
+
+\begin{frame}{Zeroes of functions}
+\begin{definition} Let $f$ be analytic on a region $D$.  We say $w\in D$ is a \emph{zero of $f$} if $f(w)=0$.  We say $w$ is a \emph{zero of order $k$} if $f(w)=f^\prime(w)=\cdots=f^{(k-1)}(w)=0$, but $f^{(k)}(w)\neq 0$.
+\end{definition}
+\begin{example}
+$z\sin(z)$ has a zero of order 2 at 0, and a zero of order 1 at $k\pi$ for $0\neq k\in\Z$
+\end{example}
+\begin{lemma}
+ $f(z)$ has a zero of order $k$ at $a$ if and only if $f(z)=(z-a)^kg(z)$, where $g(z)$ is analytic on nonzero on an open set containing $a$.
+\end{lemma}
+\begin{corollary}
+If $f(z)$ has a zero of order $m$ at $a$, and $g(z)$ has a zero of order $n$ at $a$, then $f\cdot g$ has a zero of order $m+n$ at $k$.
+\end{corollary}
+
+\end{frame}
+
+
+\end{document}
