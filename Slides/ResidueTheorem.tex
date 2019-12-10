@@ -1,0 +1,123 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{amsmath, amssymb, hyperref, graphics, tikz}
+\usepackage[normalem]{ulem} %for strikeout \sout{ }
+
+\usepackage{tikzsymbols} %for smileys
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\DeclareMathOperator{\Res}{Res}
+\begin{document}
+
+\begin{frame}{Last time: Basics of Laurent series}
+A Laurent series is like a power series but we're allowed to have negative terms:
+$$\sum_{n=-\infty}^\infty a_n(z-a)^n$$
+
+\begin{theorem}[Laurent's Theorem] Suppose that $f$ has an isolated singularity at $\alpha$, so $f$ analytic on $D^\prime=\{z: 0< |z-\alpha| < R\}$.  Then $f$ can be represented by a Laurent series around $\alpha$ that converges on $D^\prime$:
+$$f(z)=\sum_{n=-\infty}^\infty a_n (z-\alpha)^n$$
+Where:
+$$a_n=\frac{1}{2\pi i} \int_{C_r(\alpha)} \frac{f(w)}{(w-\alpha)^{n+1}}dw$$
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}{What's left to cover:}
+\begin{description}
+\item[11.5+11.6] Classification of singularities
+\item[11.7+11.8] Calculating residues at poles
+\item[12+12.1] Residue Theorem
+\item[12.2] Application of Residue Theorem to real integrals
+\end{description}
+
+\begin{definition}[Residue] Let $f$ have an isolated singularity at $\alpha$, and  Laurent expansion:
+$$f(z)=\sum_{n=-\infty}^\infty a_n (z-\alpha)^n$$
+Then $a_{-1}$ is called \emph{The residue of $f$ at $\alpha$}, and written $\Res\{f;\alpha\}.$
+\end{definition}
+\begin{block}{Awkward ordering in notes:}
+The end of 11 is really about finding Residues, but we only care about these because of the Residue Theorem.
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{To fix this, changing order of lectures}
+To motivate the material at the end of Section 11, going to cover the Residue Theorem first.
+
+\begin{description}
+\item[Today] Residue Theorem: Proof + first examples
+\item[Thursday] Classifying Singularities + finding residues
+\item[Next Tuesday] Applying Residue Theorem to real integrals
+\item[Next Thursday] Revision; focus on last two weeks
+\end{description}
+
+The material next lecture will make applying Residue Theorem easier in nice cases.
+
+
+\end{frame}
+
+\begin{frame}{}
+\begin{theorem}[The Residue Theorem]
+Let $D$ be a simply connected region containing a simple positively oriented contour $\gamma$.  Suppose $f$ is analytic on $D$ except for finitely many singularities $\beta_1,\dots, \beta_n$, none of which like on $\gamma$.  Then
+
+$$\int_\gamma f(z)dz=2\pi i \times (\text{sum of the residues of $f$ at the $\beta_i$ inside $\gamma$})$$
+
+\end{theorem}
+\begin{proof}
+The proof is really putting together things we've already done:
+\begin{itemize}
+    \item Deform contour so one singularity in each piece
+    \item Expand $f$ in Laurent series
+    \item Use formula for $a_{-1}$ / our first important example
+\end{itemize}
+\end{proof}
+\end{frame}
+
+
+\begin{frame}{}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+    \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{YodaTea.jpeg}
+\end{column}
+
+
+
+\begin{column}{0.5\textwidth}
+\sout{Every mother on Christmas morning}
+
+Every lecturer when they prove the big theorem of the module
+
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}{Using the Residue Theorem}
+Show you understand and \alert{check hypotheses}!
+
+\begin{enumerate}
+    \item Find the bad points (isolated singularities) $\beta_i$ of $f$ 
+    \item Draw picture showing $\gamma$ and bad points to see which are inside
+    \item Find the residues at the bad points inside $\gamma$
+\end{enumerate}
+\begin{block}{Examples; let  $c=5e^{it}\quad (0\leq t\leq 2\pi)$}
+\begin{enumerate}
+\item $\int_c\frac{dz}{z^2(z-3)^3}$
+\item $\int_c \frac{dz}{\tan(z)}$
+\item $\int_c z^3\cos(1/z)dz$
+\end{enumerate}
+\end{block}
+\begin{block}{Take-away:}
+Using Residue Theorem from definition can be slightly painful; can we find residue without finding whole Laurent expansion?
+\end{block}
+
+
+\end{frame}
+
+
+
+
+
+\end{document}
