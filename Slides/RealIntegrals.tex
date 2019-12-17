@@ -1,0 +1,85 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{amsmath, amssymb, hyperref, graphics, tikz}
+\usepackage[normalem]{ulem} %for strikeout \sout{ }
+
+\usepackage{tikzsymbols} %for smileys
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\DeclareMathOperator{\Res}{Res}
+\begin{document}
+
+\begin{frame}{Revision: Classification of singularities + finding residues}
+\begin{theorem}
+Suppose that $f$ has a pole of order $k$ at $\alpha$.  Then
+
+$$\Res\{f;\alpha\}=\frac{1}{(k-1)!}\lim_{z\to\alpha} \frac{d^{k-1}}{dz^{k-1}} (z-\alpha)^kf(z)$$
+\end{theorem}
+\begin{corollary}
+If $f=g/h$, where $g$ and $h$ are analytic at $\alpha$, $g(\alpha)\neq 0, h(\alpha)=0, h(\alpha)\neq 0$, then $f$ has a simple pole at $\alpha$ and
+$$\Res\{f;\alpha\}=\frac{g(\alpha)}{h^\prime(\alpha)}$$
+\end{corollary}
+\begin{block}{Examples: Classify singularities; find residues}
+$$(1+z)^2e^{i/z} \qquad \frac{z^2}{\sinh(\pi z)} \qquad \frac{1}{(1+z+z^2)^4}$$
+\end{block}
+\end{frame}
+\begin{frame}{Computing $\int_{-\infty}^\infty f(x)dx$ with the Residue Theorem}
+
+\begin{block}{Basic idea is very flexible:}
+$$\int_{-\infty}^\infty f(x)dx=\lim_{R,S\to\infty}\int_{-R}^S f(x)dx$$
+\begin{itemize}
+    \item  Include the finite integral as part of a contour integral
+    \item Calculate the contour integral using residue theorem
+    \item As $R,S\to\infty$ contributions of other parts of contour $\to 0$
+    \end{itemize}
+\end{block}
+\begin{block}{ML Estimates \emph{sometimes}  work for last point}
+Basic example / sanity check: 
+$$\int_{-\infty}^\infty \frac{1}{x^2+1}dx=\pi$$
+\end{block}
+\end{frame}
+
+\begin{frame}{Specific formulation appearing in notes on exam}
+I don't really like that you just need to memorize this, but \Sey[2][yellow]
+\begin{theorem}
+Let $f(z)=\frac{p(z)}{q(z)}e^{i\lambda z}$
+where $\lambda\in\R, \lambda>0$, $p(z),q(z)$ are polynomials with $\deg q>\deg p$, no common zeroes, and $q$ has no real roots.  Then
+$$\int_{-\infty}^\infty \frac{p(x)}{q(x)} e^{i\lambda x} dx=\sum_{i=1}^k\Res\{f;z_k\}$$
+where $z_1, z_2,\dots, z_k$ are the zeros of $q$ in the upper half plane.
+\end{theorem}
+\begin{proof}
+Follow plan from last slide; if $\deg(q)+1<\deg(p)$ can just use $ML$-estimates, otherwise we need to sweat a bit more.
+\end{proof}
+
+
+\end{frame}
+
+\begin{frame}{Applying our specific formulation to compute real integrals}
+
+\begin{block}{Take real and imaginary parts of our integrand}
+If $p,q$ have real coefficients, and $x$ is real, then
+$$\Real \frac{p(x)}{q(x)}e^{i\lambda x}=\frac{p(x)}{q(x)}\cos(\lambda x)\quad \Imag \frac{p(x)}{q(x)}e^{i\lambda x}=\frac{p(x)}{q(x)}\sin(\lambda x)$$
+\end{block}
+\begin{block}{Examples from Section 12.3 of Notes}
+$$\int_{-\infty}^\infty \frac{x\sin(\pi x)}{x^2+2x+5}dx=-\pi e^{-2\pi}$$
+$$\int_0^\infty \frac{\cos(\pi x)}{(1+x^2)^2}dx=\frac{\pi(\pi+1)e^{-\pi}}{4}$$
+$$\int_{0}^\infty \frac{\cos^2(x)}{1+x^2}dx=\frac{\pi(1+e^2)}{4e^2}$$
+
+
+
+
+
+\end{block}
+\end{frame}
+\begin{frame}{Thank you!  Thursday will be revision}
+\center
+\includegraphics[width=\textwidth,height=.9\textheight,keepaspectratio]{ItsOver.jpg}
+
+\end{frame}
+
+\end{document}
