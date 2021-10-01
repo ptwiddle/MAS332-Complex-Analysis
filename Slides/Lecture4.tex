@@ -15,6 +15,61 @@
 
 \begin{document}
 
+\begin{frame}{Today's plan:}
+
+
+  \begin{enumerate}
+  \item Finish Section 3: Line integrals
+  \item Cover Section 4: Notation about sets
+  \end{enumerate}
+
+\begin{block}{But first:}
+Any questions?
+  \end{block}
+  \end{frame}
+
+\begin{frame}{Actually computing line integrals}
+$$\int_\gamma f(z)\text{d}z := \int_a^b f(z(t))z^\prime(t)\text{d}t$$
+\begin{example}
+Let $\gamma$ be the path that's a straight line from 0 to 1, and then a straight line from 1 to $2+i$.  Compute:
+$$\int_\gamma \Real(z)\text{d}z$$
+$$\int_\gamma \Imag(z)\text{d}z$$
+$$\int_\gamma z\text{d}z$$
+\end{example}
+\end{frame}
+
+\begin{frame}{The most important example}
+Recall: $C_r(a)$ is the anti-clockwise circle of radius $r$ around $a$.  
+\begin{block}{An mysterious computation:}
+Let $n\in\Z$
+$$\int_{C_r(a)}\frac{1}{(z-a)^n}\text{d}z=\begin{cases} 0 & n\neq 1 \\ 2\pi i & n=1\end{cases}$$
+Independent of $a$ and $r$, works for $n$ negative, too!
+\end{block}
+\begin{block}{Coming attractions -- conceptual explanation!}
+\begin{itemize}
+    \item \emph{Antiderivatives} explain why the answer is zero unless $n=1$
+    \item \emph{Cauchy's theorem} explains why it's independent of $r$
+    \item \emph{Residue theorem} reduces \emph{any} integral to this computation!
+\end{itemize}
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+  
+\begin{center}
+
+\Huge
+
+\usebeamercolor[fg]{frametitle}
+Clicker Session \\
+Turning Point app or \\
+ttpoll.eu 
+
+\end{center}
+
+\end{frame}
+
 \begin{frame}{Seen on twitter -- ``Chaotic evil'' maths}
   \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{ChaoticEvil.png}
   
@@ -70,48 +125,7 @@ We're implicitly using the Jordan Curve theorem -- that a simple curve closed in
 
 \end{frame}
 
-\begin{frame}
-  
-\begin{center}
 
-\Huge
-
-\usebeamercolor[fg]{frametitle}
-Clicker Session \\
-Turning Point app or \\
-ttpoll.eu 
-
-\end{center}
-
-\end{frame}
-
-
-\begin{frame}{Actually computing line integrals}
-$$\int_\gamma f(z)\text{d}z := \int_a^b f(z(t))z^\prime(t)\text{d}t$$
-\begin{example}
-Let $\gamma$ be the path that's a straight line from 0 to 1, and then a straight line from 1 to $2+i$.  Compute:
-$$\int_\gamma \Real(z)\text{d}z$$
-$$\int_\gamma \Imag(z)\text{d}z$$
-$$\int_\gamma z\text{d}z$$
-\end{example}
-\end{frame}
-
-\begin{frame}{The most important example}
-Recall: $C_r(a)$ is the anti-clockwise circle of radius $r$ around $a$.  
-\begin{block}{An mysterious computation:}
-Let $n\in\Z$
-$$\int_{C_r(a)}\frac{1}{(z-a)^n}\text{d}z=\begin{cases} 0 & n\neq 1 \\ 2\pi i & n=1\end{cases}$$
-Independent of $a$ and $r$, works for $n$ negative, too!
-\end{block}
-\begin{block}{Coming attractions -- conceptual explanation!}
-\begin{itemize}
-    \item \emph{Antiderivatives} explain why the answer is zero unless $n=1$
-    \item \emph{Cauchy's theorem} explains why it's independent of $r$
-    \item \emph{Residue theorem} reduces \emph{any} integral to this computation!
-\end{itemize}
-
-\end{block}
-\end{frame}
 
 
 \end{document}
