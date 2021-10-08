@@ -1,0 +1,91 @@
+
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{amsmath, amssymb, hyperref, graphics, tikz}
+%\usepackage{mathpazo, soul}
+
+
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+
+
+\begin{document}
+
+
+\begin{frame}{Ended last time computing line integrals}
+
+  We finished one basic example.
+
+  \begin{block}{Do we want another easy example?}
+    \end{block}
+  
+
+\begin{block}{A mysterious (but important!) example}
+Let $n\in\Z$
+$$\int_{C_r(a)}\frac{1}{(z-a)^n}\text{d}z=\begin{cases} 0 & n\neq 1 \\ 2\pi i & n=1\end{cases}$$
+Independent of $a$ and $r$, works for $n$ negative, too!
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Will revisit throughout module:}
+$$\int_{C_r(a)}\frac{1}{(z-a)^n}\text{d}z=\begin{cases} 0 & n\neq 1 \\ 2\pi i & n=1\end{cases}$$
+\begin{block}{Coming attractions -- conceptual explanation!}
+\begin{itemize}
+    \item \emph{Antiderivatives} explain why the answer is zero unless $n=1$
+    \item \emph{Cauchy's theorem} explains why it's independent of $r$
+    \item \emph{Residue theorem} reduces \emph{any} integral to this computation!
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Section 5: Derivatives.  First: limits, continuity}
+
+\begin{definition}[Limits]Let $f$ be defined on some punctured neighborhood of $z_0$.
+Then we say
+$$\lim_{z\to z_0} f(x)=a$$
+if for all $\varepsilon>0$ there exists a $\delta>0$ such that if $0<|z-z_0|<\delta$, then $|f(z)-f(z_0)|<\varepsilon$.
+\end{definition}
+
+\begin{definition}[Continuous]Let $f$ be defined in a neighborhood of $a$.  We say $f$ is continuous at $a$ if $\lim_{z\to a}f(z)=f(a)$.
+\end{definition}
+
+
+
+\begin{block}{These are identical to limit/continuity for $f:\R^2\to\R^2$}
+Doesn't use the multiplicative structure of $\C$.
+\end{block}
+\end{frame}
+
+\begin{frame}{The definition of the derivative \emph{looks} the same}
+\begin{definition}[The derivative] Let $f:\C\to \C$ be defined on a neighbourhood of $z_0$.  The derivative of $f$ at $z_0$, if it exists, is 
+$$f^\prime(z_0)=\lim_{z\to z_0} \frac{f(z)-f(z_0)}{z-z_0}$$
+\end{definition}
+Could also use the definition with $h\to 0$, but now $h\in\C$.
+\begin{block}{Many familiar things follow:}
+\begin{itemize}
+\item $\frac{d}{dz} z^n=nz^{n-1}$
+\item $\frac{d}{dz} e^z=e^z$
+\item The derivative is linear
+\item Chain rule, product rule, quotient rule
+\item $\dots$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{\emph{BUT} some very nice functions \emph{aren't} differentiable}
+\begin{example}Let $f(z)=\Real(z)$.  Then $f$ is not differentiable at any point in $\C$.
+\end{example}
+
+\end{frame}
+
+
+
+
+\end{document}
