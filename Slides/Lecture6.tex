@@ -20,21 +20,24 @@
 \end{frame}
 
 
-\begin{frame}{Line integrals: an important example}
-Recall: $C_r(a)$ is the anti-clockwise circle of radius $r$ around $a$.  
-\begin{block}{A mysterious computation:}
-Let $n\in\Z$
-$$\int_{C_r(a)}\frac{1}{(z-a)^n}\text{d}z=\begin{cases} 0 & n\neq 1 \\ 2\pi i & n=1\end{cases}$$
-Independent of $a$ and $r$, works for $n$ negative, too!
-\end{block}
-\begin{block}{Coming attractions -- conceptual explanation!}
+\begin{frame}{Line integrals: Another example}
+  Consider the following two paths between 0 and $1+i$:
 \begin{itemize}
-    \item \emph{Antiderivatives} explain why the answer is zero unless $n=1$
-    \item \emph{Cauchy's theorem} explains why it's independent of $r$
-    \item \emph{Residue theorem} reduces \emph{any} integral to this computation!
+\item $\alpha$ goes  along the circle of radius 1 centered at $i$
+\item $\beta$ goes along the parabola $y=x^2$.
 \end{itemize}
-\end{block}
+
+Compute:
+\begin{enumerate}
+\item $\int_\alpha \text{Re}(z) dz$
+\item  $\int_\beta \text{Re}(z)dz$
+\item $\int_\alpha zdz$
+\item $\int_\beta zdz$
+\end{enumerate}
+
+What do you notice?
 \end{frame}
+
 \begin{frame}{Derivatives review}
 \begin{definition} Let $f$ be defined on some open subset $U\subset \C$.  $f$ is \emph{differentiable} at $z_0\in U$ if
 $$f^\prime(z_0):=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}$$ 
@@ -45,13 +48,11 @@ exists.
     \item Numerator and denominator will be complex numbers
     \item Have to get the same limit no matter how we approach $z_0$
 \end{itemize}
-It will turn out that a complex function being differentiable is much strong than a real function being differentiable.
 \end{block}
-\begin{block}{Cauchy-Riemann equations are first example of that}
-\end{block}
+\begin{definition} A function $f$ is holomorphic (the notes use analytic, which I'll rant about later) at $z_0$ if it is differentiable at every point in some neighborhood around $z_0$.
+  \end{definition}
+
 \end{frame}
-
-
 
 \begin{frame}
   

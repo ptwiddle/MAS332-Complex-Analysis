@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+\section*{2018-2019 Exam}
+\subsection*{Question 1, part (ii)} Everything is right through $$e^z=\frac{-1\pm\sqrt{3}i}{2}$$
+
+Taking $\ln$, the real part is
+$$\ln |\frac{-1\pm\sqrt{3}i}{2}|=\ln 1 =0$$
+\emph{not} $\ln(2)$ as in the notes.  The imaginary part is fine.
+\subsection*{Question 1, part (ii)} The question asks for the roots of $z^7+1=0$, i.e., the 7th roots of -1; the solutions work with $z^-1=0$, i.e., the seventh roots of $1$.  The 7th roots of $-1$ are $e^{\pi i/7}, e^{3\pi i/7}, e^{5\pi i/7}, e^{7\pi i/7}=-1, e^{9\pi i/7}=e^{-5\pi/7}, e^{11\pi i/7}=e^{-3\pi i/7}, e^{13\pi i/7}=e^{-\pi i/7}$.
+
+Hence
+\begin{align*}z^7+1&=(z+1)(z-e^{\pi i/7})(z-e^{-\pi i/7})(z-e^{3\pi i/7})(z-e^{-3\pi i/7})(z-e^{\pi 5i/7})(z-e^{-\pi 5i/7})\\
+  &=(z+1)(z^2-2z\cos(\pi/7)+1)(z^2-2z\cos(3\pi/7)+1)(z^2-2z\cos(5\pi/7)+1)
+  \end{align*}
+
+\subsection*{Question 2, Part (iii)}
+The functions the question deal with are slightly wrong / in the wrong order.
+
+Part (a) on the actual exam is answered as Part (b) in the solutions.
+
+Part (b) on the actual exam is not harmonic -- the first term $2\cos(x)\cosh(y)$ is, but $2x^2$ is not.  Hence it cannot be the real part of an analytic function.
+
+Part (c) on the actual exam is very nearly, but not quite, the function dealt with in the solutions -- $\sinh(2y)$ on the exam has become $\cosh(2y)$ in the solutions.  The general method of solution is the same, except we find
+
+$$f^\prime(z)=3+10\sin(2x)\sinh(2y)-10\cos(2x)\cosh(2y)$$
+setting $y=0$, $\sinh(2y)=0$ and $\cosh(2y)=1$, so we guess
+$$f^\prime(z)=3-10\cos(2z)$$, and thus $f(z)=3z-5\sin(2z)+i\alpha$, where $\alpha\in\R$.  
+
+\subsection*{Question 4, Part (ii)}
+These look right, but I wanted to point out a subtlety in Part (c) that could trip you up -- the Laurent expansion of $2m(z)$ is found, which has residue $-\pi^2/48$. Dividing by 2 gives the desired residue of $m(z)$.
+\end{document}

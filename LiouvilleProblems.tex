@@ -1,0 +1,33 @@
+\documentclass{amsart}
+\title{Liouville's Theorem Questions and Solutions}
+
+
+
+\newcommand{\ds}[1]{\displaystyle{#1}}
+\begin{document}
+\maketitle
+\section*{Questions}
+\subsection*{Exercise 6.6 for convenience}
+ State Liouville's Theorem. \medskip \\
+ \indent (i) ~The function $f$ is analytic in the complex plane and $|f(z)| \geq 1$ for all $z \in \mathbb{C}$. Show that $f$ is constant.  \\
+ \indent **(ii) ~The function $f$ is analytic in the complex plane and  \textrm{Re}$(f(z)) >1 $ in $\mathbb{C}$. Prove that $f$ is constant in $\mathbb{C}$.
+
+\subsection*{An extra Liouville's Theorem question}
+ The function $f$ is analytic in $ \mathbb{C} $ and $ |f(z) +1| < |f(z)|$ for all $ z \in \mathbb{C}$. Show that $f$ is constant. 
+
+\section*{Solutions}
+\subsection*{Solution to Exercise 6.6}
+\underline{Liouville's Theorem}~~ A function which is analytic and bounded in the complex plane is a constant. \medskip \\
+\indent (i) Since $|f(z)| \geq 1$ we see that $f(z) \neq 0$ in the complex plane. Write $g =\frac{1}{f}$. Then $g$ is analytic in the complex plane
+since $f$ is non-zero and analytic in $\mathbb{C}$ and $|g(z)| \leq 1,$ i.e. $g$ is analytic and bounded in $\mathbb{C}$. By Liouville's Theorem $g$ is a constant. This constant is not zero as $f(z)$ is defined for all $z$. Hence $f= \frac{1}{g}$ is also constant. \bigskip \\
+
+\indent (ii) We use the standard notation $f(z) = u(x,y) + iv(x,y)$ where $u$ and $v$ are real valued. Now we are given that $\textrm{Re}{f(z)} \geq 1$ and so $|f(z)|^2 ~=~u^2 +v^2 ~\geq 1 $  i.e $|f(z)| \geq 1$ for all $z \in \mathbb{C}$. It follows from part (i) that $f$ is constant.
+
+\subsection*{Solution to the extra question}
+Since $$0 \leq |f(z) + 1|< |f(z)| \, ,$$ we see that $f(z)$ is never zero on $\mathbb{C}$. \bigskip \\ Hence
+ $\quad \ds{ \frac{f(z)+1}{f(z)}} \mbox{~~is analytic in~~} \mathbb{C} \mbox{~~ and~~} \ds{\left|\frac{f(z) +1}{f(z)} \right| < 1} \mbox{~~ for all~~}z$. \bigskip \\
+
+By Liouville's Theorem $\ds{\frac{f(z) +1}{f(z)} } ~=~ k$, where the constant $k<1$. \medskip \\
+
+Hence $$f(z) ~=~ \frac{1}{1-k}. $$
+\end{document}
