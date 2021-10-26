@@ -64,12 +64,15 @@ No Cauchy, because $\C\setminus\{0\}$ isn't simply connected.
 \end{itemize}
 \end{frame}
 \begin{frame}{Mary's rebuttal}\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{ChopperFilled3.jpg}
+  
 To prove that $f$ analytic, $D$ simply connected $\implies$ $f$ has primitive comes much later in notes, and \emph{depends} on Cauchy's theorem.
 \end{frame}
 \begin{frame}{Well, sure, but...}\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{ChopperFilled4.jpg}
-The pay-off for Cauchy's theorem doesn't come until later
+
+  The pay-off for Cauchy's theorem doesn't come until later
 \end{frame}
 \begin{frame}{We're in agreement after all...}\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{ChopperFilled5.jpg}
+  
 Even if I disagree about Cauchy being superior, I agree the point is that the hypotheses of Cauchy's Theorem are very weak
 \end{frame}
 \begin{frame}{The proof of Cauchy's Theorem}
@@ -82,9 +85,25 @@ Because the hypotheses are so weak!
 \end{itemize}
 Proof \emph{is} in the recommended textbooks...
 \end{block}
-\begin{example}[A non-continuous derivative]
+\begin{theorem}[Green]
+  Let $\Delta$ be the region bounded by an anticlockwise contuous $\gamma$, and let $f$ and $g$ have continous partial derivatives.  Then:
+
+  $$\int_\gamma f\textrm{d}x+g\textrm{d}y=\iint_\Delta \frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}  \textrm{d}x\textrm{d}y$$
+
+\end{theorem}
+
+
+\end{frame}
+\begin{frame}{A non-continuous derivative}
+Here's an example that shows that for \emph{real} functions, the derivative of a function can be non-continuous:
+
+\begin{example}
+  Let
 $$f(x)=\begin{cases}x^2\sin(1/x) & x\neq 0\\0 & x=0 \end{cases}$$
+Then
 $$f^\prime(x)=\begin{cases}2x\sin(1/x)-\cos(1/x) & x\neq 0\\0 & x=0 \end{cases}$$
+exists at 0 but is not continuous there.
+
 \end{example}
 
 \end{frame}
