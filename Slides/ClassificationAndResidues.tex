@@ -1,0 +1,80 @@
+\documentclass{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage{amsmath, amssymb, hyperref, graphics, tikz}
+\usepackage[normalem]{ulem} %for strikeout \sout{ }
+
+\usepackage{tikzsymbols} %for smileys
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\DeclareMathOperator{\Res}{Res}
+\begin{document}
+
+
+
+\begin{frame}{Classification of Singularities}
+By Laurent's Theorem, if $f(z)$ is analytic in a punctured disk around $\alpha$, it has a convergent Laurent expansion
+$$f(z)=\sum_{n\in\Z} a_n (z-\alpha)^n$$
+\begin{block}{Three possibilities:}
+\begin{description}
+   \item[Removable singularity] None of the $a_n$ with $n<0$ are nonzero
+       \item[A pole] Only finitely many $a_n$ with $n<0$ are nonzero
+    \item[Essential singularity] Infinitely many $a_n$ with $n<0$ are nonzero
+
+\end{description}
+\end{block}
+
+\begin{block}{Typical Questio (first step to using Residue Theorem):}
+Find and classify the singularities of $f(z)$, and find the residue at each one.
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{Examples:}
+
+  
+   $$\frac{1}{1+z^2} \quad\quad\quad \frac{1}{e^z-1}\quad\quad\quad z\cos\left(\frac{1}{z-1}\right)$$
+    $$\frac{\cos(z)}{z^2\sin(z)} \quad\quad\quad \frac{\tan{z}}{z}$$  
+
+      
+  
+
+
+\end{frame}  
+
+\begin{frame}{Easy (and examinable!) theorems about poles}
+\begin{theorem} $f$ has a pole of order $k$ at $\alpha$ if and only if $$f(z)=\frac{g(z)}{(z-\alpha)^k}$$ where $g(z)$ analytic and nonzero in some disk around $\alpha$.
+\end{theorem}
+
+\begin{theorem} If $f$ has a zero of order $k$ at $\alpha$, then $1/f$ has a pole of order $k$ at $\alpha$.
+\end{theorem}
+
+\begin{corollary}If $f$ has a zero of order $m$ at $\alpha$, and $g$ has a zero of order $n$ at $\alpha$, then
+\begin{itemize}
+    \item $\frac{f}{g}$ has a pole of order $n-m$ if $n>m$
+    \item $\frac{f}{g}$ has a removable singularity if $m\geq n$
+\end{itemize}
+\end{corollary}
+\end{frame}
+
+\begin{frame}{Easy way to find residues at poles}
+\begin{theorem}
+Suppose that $f$ has a pole of order $k$ at $\alpha$.  Then
+
+$$\Res\{f;\alpha\}=\frac{1}{(k-1)!}\lim_{z\to\alpha} \frac{d^{k-1}}{dz^{k-1}} (z-\alpha)^kf(z)$$
+\end{theorem}
+\begin{proof}Just compute the right hand side.
+\end{proof}
+\begin{corollary}
+If $f=g/h$, where $g$ and $h$ are analytic at $\alpha$, $g(\alpha)\neq 0, h(\alpha)=0, h(\alpha)\neq 0$, then $f$ has a simple pole at $\alpha$ and
+$$\Res\{f;\alpha\}=\frac{g(\alpha)}{h^\prime(\alpha)}$$
+\end{corollary}
+\end{frame}
+
+\end{document}
+
