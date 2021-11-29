@@ -14,21 +14,7 @@
 \DeclareMathOperator{\Res}{Res}
 \begin{document}
 
-\begin{frame}{Revision: Classification of singularities + finding residues}
-\begin{theorem}
-Suppose that $f$ has a pole of order $k$ at $\alpha$.  Then
-
-$$\Res\{f;\alpha\}=\frac{1}{(k-1)!}\lim_{z\to\alpha} \frac{d^{k-1}}{dz^{k-1}} (z-\alpha)^kf(z)$$
-\end{theorem}
-\begin{corollary}
-If $f=g/h$, where $g$ and $h$ are analytic at $\alpha$, $g(\alpha)\neq 0, h(\alpha)=0, h(\alpha)\neq 0$, then $f$ has a simple pole at $\alpha$ and
-$$\Res\{f;\alpha\}=\frac{g(\alpha)}{h^\prime(\alpha)}$$
-\end{corollary}
-\begin{block}{Examples: Classify singularities; find residues}
-$$(1+z)^2e^{i/z} \qquad \frac{z^2}{\sinh(\pi z)} \qquad \frac{1}{(1+z+z^2)^4}$$
-\end{block}
-\end{frame}
-\begin{frame}{Computing $\int_{-\infty}^\infty f(x)dx$ with the Residue Theorem}
+\begin{frame}{Computing real integrals with the Residue Theorem}
 
 \begin{block}{Basic idea is very flexible:}
 $$\int_{-\infty}^\infty f(x)dx=\lim_{R,S\to\infty}\int_{-R}^S f(x)dx$$
@@ -38,14 +24,17 @@ $$\int_{-\infty}^\infty f(x)dx=\lim_{R,S\to\infty}\int_{-R}^S f(x)dx$$
     \item As $R,S\to\infty$ contributions of other parts of contour $\to 0$
     \end{itemize}
 \end{block}
-\begin{block}{ML Estimates \emph{sometimes}  work for last point}
+
+
+
+\begin{block}{ML Estimates often work for last point}
 Basic example / sanity check: 
 $$\int_{-\infty}^\infty \frac{1}{x^2+1}dx=\pi$$
 \end{block}
 \end{frame}
 
 \begin{frame}{Specific formulation appearing in notes on exam}
-I don't really like that you just need to memorize this, but \Sey[2][yellow]
+Older exams wanted you to memorize this \Sey[2][yellow]
 \begin{theorem}
 Let $f(z)=\frac{p(z)}{q(z)}e^{i\lambda z}$
 where $\lambda\in\R, \lambda>0$, $p(z),q(z)$ are polynomials with $\deg q>\deg p$, no common zeroes, and $q$ has no real roots.  Then
@@ -76,7 +65,7 @@ $$\int_{0}^\infty \frac{\cos^2(x)}{1+x^2}dx=\frac{\pi(1+e^2)}{4e^2}$$
 
 \end{block}
 \end{frame}
-\begin{frame}{Thank you!  Thursday will be revision}
+\begin{frame}{Thank you! Next week Revision/Applications}
 \center
 \includegraphics[width=\textwidth,height=.9\textheight,keepaspectratio]{ItsOver.jpg}
 
